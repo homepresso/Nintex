@@ -1,1 +1,81 @@
-{"swagger":"2.0","info":{"title":"Azurewebsites","description":"API for andys.azurewebsites.net","version":"0.0.0"},"host":"andys.azurewebsites.net","schemes":["https"],"paths":{"/api/ReadExcel":{"post":{"tags":["Web"],"description":"Read excel","operationId":"ReadExcel","consumes":["multipart/form-data"],"produces":["application/json"],"parameters":[{"name":"file","in":"formData","description":"file","required":true,"type":"file","x-example":""}],"responses":{"200":{"description":"OK","schema":{"type":"array","items":{"type":"string"}},"examples":{"application/json":[{"FirstName":"Andy","LastName":"Hayes","Phone":"232434","Company":"nintex"},{"FirstName":"DC","LastName":"Hersleman","Phone":"3434332","Company":"nintex"},{"FirstName":"Dan","LastName":"Burke","Phone":"5345345","Company":"Nintex"}]}}},"security":[]}}},"definitions":{"ReadExcel":{"description":"Model for ReadExcel","required":["Company"],"properties":{"Company":{"type":"string","x-example":"nintex"},"FirstName":{"type":"string","x-example":"Andy"},"LastName":{"type":"string","x-example":"Hayes"},"Phone":{"type":"string","x-example":"232434"}}}},"securityDefinitions":{},"security":[],"tags":[{"name":"Web","description":"Operations about Web"}]}
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Read Excel File",
+    "description": "API for Read Excel File",
+    "version": "0.0.0"
+  },
+  "host": "andys.azurewebsites.net",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/ReadExcel": {
+      "post": {
+        "tags": [
+          "Web"
+        ],
+        "description": "Read excel",
+        "operationId": "ReadExcel",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "file",
+            "required": true,
+            "type": "file",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "definitions": {
+    "ReadExcel": {
+      "description": "Model for ReadExcel",
+      "required": [
+        "Company"
+      ],
+      "properties": {
+        "Company": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Phone": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {},
+  "security": [],
+  "tags": [
+    {
+      "name": "Web",
+      "description": "Operations about Web"
+    }
+  ]
+}
