@@ -1,0 +1,677 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "New SAP-based Web Service"
+  },
+  "host": "k2nasap.servicebus.windows.net",
+  "basePath": "/ecs/ws",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/custom/NewECSCoreWebService/DoesCustomerExist": {
+      "post": {
+        "summary": "DoesCustomerExist",
+        "description": "DoesCustomerExist",
+        "operationId": "DoesCustomerExist",
+        "parameters": [
+          {
+            "description": "Division",
+            "in": "query",
+            "name": "Division",
+            "type": "string"
+          },
+          {
+            "description": "CustomerNumber",
+            "in": "query",
+            "name": "CustomerNumber",
+            "type": "string"
+          },
+          {
+            "description": "CompanyCode",
+            "in": "query",
+            "name": "CompanyCode",
+            "type": "string"
+          },
+          {
+            "description": "SalesOrganisation",
+            "in": "query",
+            "name": "SalesOrganisation",
+            "type": "string"
+          },
+          {
+            "description": "DistributionChannel",
+            "in": "query",
+            "name": "DistributionChannel",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "ReturnType": {
+                      "type": "string"
+                    },
+                    "ReturnID": {
+                      "type": "string"
+                    },
+                    "ReturnNumber": {
+                      "type": "string"
+                    },
+                    "ReturnMessage": {
+                      "type": "string"
+                    },
+                    "ReturnText": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/custom/NewECSCoreWebService/CreateCustomer": {
+      "post": {
+        "summary": "CreateCustomer",
+        "description": "CreateCustomer",
+        "operationId": "CreateCustomer",
+        "parameters": [
+          {
+            "description": "CustomerName",
+            "in": "query",
+            "name": "CustomerName",
+            "type": "string"
+          },
+          {
+            "description": "CustomerCity",
+            "in": "query",
+            "name": "CustomerCity",
+            "type": "string"
+          },
+          {
+            "description": "CustomerCountryKey",
+            "in": "query",
+            "name": "CustomerCountryKey",
+            "type": "string"
+          },
+          {
+            "description": "CustomerPostalCode",
+            "in": "query",
+            "name": "CustomerPostalCode",
+            "type": "string"
+          },
+          {
+            "description": "DistributionChannel",
+            "in": "query",
+            "name": "DistributionChannel",
+            "type": "string"
+          },
+          {
+            "description": "Division",
+            "in": "query",
+            "name": "Division",
+            "type": "string"
+          },
+          {
+            "description": "ReferenceCustomer",
+            "in": "query",
+            "name": "ReferenceCustomer",
+            "type": "string"
+          },
+          {
+            "description": "LanguageKey",
+            "in": "query",
+            "name": "LanguageKey",
+            "type": "string"
+          },
+          {
+            "description": "Currency",
+            "in": "query",
+            "name": "Currency",
+            "type": "string"
+          },
+          {
+            "description": "CustomerStreet",
+            "in": "query",
+            "name": "CustomerStreet",
+            "type": "string"
+          },
+          {
+            "description": "External_ID",
+            "in": "query",
+            "name": "External_ID",
+            "type": "string"
+          },
+          {
+            "description": "SalesOrganisation",
+            "in": "query",
+            "name": "SalesOrganisation",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "CustomerNumber": {
+                      "type": "string"
+                    },
+                    "ReturnStructure": {
+                      "type": "object",
+                      "properties": {
+                        "ReturnType": {
+                          "type": "string"
+                        },
+                        "ReturnID": {
+                          "type": "string"
+                        },
+                        "ReturnNumber": {
+                          "type": "string"
+                        },
+                        "ReturnMessage": {
+                          "type": "string"
+                        },
+                        "ReturnText": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/custom/NewECSCoreWebService/ChangeCustomer": {
+      "post": {
+        "summary": "ChangeCustomer",
+        "description": "ChangeCustomer",
+        "operationId": "ChangeCustomer",
+        "parameters": [
+          {
+            "description": "CustomerName",
+            "in": "query",
+            "name": "CustomerName",
+            "type": "string"
+          },
+          {
+            "description": "CustomerCity",
+            "in": "query",
+            "name": "CustomerCity",
+            "type": "string"
+          },
+          {
+            "description": "CustomerCountryKey",
+            "in": "query",
+            "name": "CustomerCountryKey",
+            "type": "string"
+          },
+          {
+            "description": "CustomerPostalCode",
+            "in": "query",
+            "name": "CustomerPostalCode",
+            "type": "string"
+          },
+          {
+            "description": "DistributionChannel",
+            "in": "query",
+            "name": "DistributionChannel",
+            "type": "string"
+          },
+          {
+            "description": "Division",
+            "in": "query",
+            "name": "Division",
+            "type": "string"
+          },
+          {
+            "description": "LanguageKey",
+            "in": "query",
+            "name": "LanguageKey",
+            "type": "string"
+          },
+          {
+            "description": "Currency",
+            "in": "query",
+            "name": "Currency",
+            "type": "string"
+          },
+          {
+            "description": "CustomerStreet",
+            "in": "query",
+            "name": "CustomerStreet",
+            "type": "string"
+          },
+          {
+            "description": "CustomerNumber",
+            "in": "query",
+            "name": "CustomerNumber",
+            "type": "string"
+          },
+          {
+            "description": "SalesOrganisation",
+            "in": "query",
+            "name": "SalesOrganisation",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "ReturnType": {
+                      "type": "string"
+                    },
+                    "ReturnID": {
+                      "type": "string"
+                    },
+                    "ReturnNumber": {
+                      "type": "string"
+                    },
+                    "ReturnMessage": {
+                      "type": "string"
+                    },
+                    "ReturnText": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/custom/NewECSCoreWebService/GetCustomers": {
+      "post": {
+        "summary": "GetCustomers",
+        "description": "GetCustomers",
+        "operationId": "GetCustomers",
+        "parameters": [
+          {
+            "description": "CustomerNamePattern",
+            "in": "query",
+            "name": "CustomerNamePattern",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "CustomerNumber": {
+                        "type": "string"
+                      },
+                      "Salutation": {
+                        "type": "string"
+                      },
+                      "Name": {
+                        "type": "string"
+                      },
+                      "POBox": {
+                        "type": "string"
+                      },
+                      "Street": {
+                        "type": "string"
+                      },
+                      "Postalcode": {
+                        "type": "string"
+                      },
+                      "City": {
+                        "type": "string"
+                      },
+                      "Telephone": {
+                        "type": "string"
+                      },
+                      "Fax": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/custom/NewECSCoreWebService/DeleteCustomer": {
+      "post": {
+        "summary": "DeleteCustomer",
+        "description": "DeleteCustomer",
+        "operationId": "DeleteCustomer",
+        "parameters": [
+          {
+            "description": "CustomerNumber",
+            "in": "query",
+            "name": "CustomerNumber",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "ReturnStructure": {
+                      "type": "object",
+                      "properties": {
+                        "ReturnType": {
+                          "type": "string"
+                        },
+                        "ReturnID": {
+                          "type": "string"
+                        },
+                        "ReturnNumber": {
+                          "type": "string"
+                        },
+                        "ReturnMessage": {
+                          "type": "string"
+                        },
+                        "ReturnText": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/custom/NewECSCoreWebService/GetCustomerDetails": {
+      "post": {
+        "summary": "GetCustomerDetails",
+        "description": "GetCustomerDetails",
+        "operationId": "GetCustomerDetails",
+        "parameters": [
+          {
+            "description": "CustomerNo",
+            "in": "query",
+            "name": "CustomerNo",
+            "type": "string"
+          },
+          {
+            "description": "CompanyCode",
+            "in": "query",
+            "name": "CompanyCode",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "AddressData": {
+                      "type": "object",
+                      "properties": {
+                        "CustomerNo": {
+                          "type": "string"
+                        },
+                        "Name": {
+                          "type": "string"
+                        },
+                        "Name2": {
+                          "type": "string"
+                        },
+                        "Name3": {
+                          "type": "string"
+                        },
+                        "Name4": {
+                          "type": "string"
+                        },
+                        "City": {
+                          "type": "string"
+                        },
+                        "District": {
+                          "type": "string"
+                        },
+                        "PO_Box": {
+                          "type": "string"
+                        },
+                        "PostalCode": {
+                          "type": "string"
+                        },
+                        "Region": {
+                          "type": "string"
+                        },
+                        "CountyCode": {
+                          "type": "string"
+                        },
+                        "CityCode": {
+                          "type": "string"
+                        },
+                        "Street": {
+                          "type": "string"
+                        },
+                        "Telephone": {
+                          "type": "string"
+                        },
+                        "Country": {
+                          "type": "string"
+                        },
+                        "LanguageKey": {
+                          "type": "string"
+                        },
+                        "Telebox": {
+                          "type": "string"
+                        },
+                        "Telephone2": {
+                          "type": "string"
+                        },
+                        "FormOfAddress": {
+                          "type": "string"
+                        },
+                        "Telex": {
+                          "type": "string"
+                        },
+                        "Transportzone": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "ReturnStructure": {
+                      "type": "object",
+                      "properties": {
+                        "ReturnType": {
+                          "type": "string"
+                        },
+                        "ReturnID": {
+                          "type": "string"
+                        },
+                        "ReturnNumber": {
+                          "type": "string"
+                        },
+                        "ReturnMessage": {
+                          "type": "string"
+                        },
+                        "ReturnText": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    },
+    "Basic": {
+      "type": "basic"
+    }
+  }
+}
