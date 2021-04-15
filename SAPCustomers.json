@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "New SAP-based Web Service"
+    "title": "SAPCustomers"
   },
   "host": "k2nasap.servicebus.windows.net",
   "basePath": "/ecs/ws",
@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/custom/NewECSCoreWebService/DoesCustomerExist": {
+    "/custom/SAPCustomers/DoesCustomerExist": {
       "post": {
         "summary": "DoesCustomerExist",
         "description": "DoesCustomerExist",
@@ -57,43 +57,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "type": "object",
-              "properties": {
-                "result": {
-                  "type": "object",
-                  "properties": {
-                    "ReturnType": {
-                      "type": "string"
-                    },
-                    "ReturnID": {
-                      "type": "string"
-                    },
-                    "ReturnNumber": {
-                      "type": "string"
-                    },
-                    "ReturnMessage": {
-                      "type": "string"
-                    },
-                    "ReturnText": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "error": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "stackTrace": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
+              "$ref": "#/definitions/DoesCustomerExist200"
             }
           }
         },
@@ -105,7 +69,7 @@
         ]
       }
     },
-    "/custom/NewECSCoreWebService/CreateCustomer": {
+    "/custom/SAPCustomers/CreateCustomer": {
       "post": {
         "summary": "CreateCustomer",
         "description": "CreateCustomer",
@@ -188,51 +152,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "type": "object",
-              "properties": {
-                "result": {
-                  "type": "object",
-                  "properties": {
-                    "CustomerNumber": {
-                      "type": "string"
-                    },
-                    "ReturnStructure": {
-                      "type": "object",
-                      "properties": {
-                        "ReturnType": {
-                          "type": "string"
-                        },
-                        "ReturnID": {
-                          "type": "string"
-                        },
-                        "ReturnNumber": {
-                          "type": "string"
-                        },
-                        "ReturnMessage": {
-                          "type": "string"
-                        },
-                        "ReturnText": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                },
-                "error": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "stackTrace": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
+              "$ref": "#/definitions/CreateCustomer200"
             }
           }
         },
@@ -244,7 +164,7 @@
         ]
       }
     },
-    "/custom/NewECSCoreWebService/ChangeCustomer": {
+    "/custom/SAPCustomers/ChangeCustomer": {
       "post": {
         "summary": "ChangeCustomer",
         "description": "ChangeCustomer",
@@ -321,43 +241,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "type": "object",
-              "properties": {
-                "result": {
-                  "type": "object",
-                  "properties": {
-                    "ReturnType": {
-                      "type": "string"
-                    },
-                    "ReturnID": {
-                      "type": "string"
-                    },
-                    "ReturnNumber": {
-                      "type": "string"
-                    },
-                    "ReturnMessage": {
-                      "type": "string"
-                    },
-                    "ReturnText": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "error": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "stackTrace": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
+              "$ref": "#/definitions/ChangeCustomer200"
             }
           }
         },
@@ -369,7 +253,7 @@
         ]
       }
     },
-    "/custom/NewECSCoreWebService/GetCustomers": {
+    "/custom/SAPCustomers/GetCustomers": {
       "post": {
         "summary": "GetCustomers",
         "description": "GetCustomers",
@@ -386,58 +270,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "type": "object",
-              "properties": {
-                "result": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "CustomerNumber": {
-                        "type": "string"
-                      },
-                      "Salutation": {
-                        "type": "string"
-                      },
-                      "Name": {
-                        "type": "string"
-                      },
-                      "POBox": {
-                        "type": "string"
-                      },
-                      "Street": {
-                        "type": "string"
-                      },
-                      "Postalcode": {
-                        "type": "string"
-                      },
-                      "City": {
-                        "type": "string"
-                      },
-                      "Telephone": {
-                        "type": "string"
-                      },
-                      "Fax": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                },
-                "error": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "stackTrace": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
+              "$ref": "#/definitions/GetCustomers200"
             }
           }
         },
@@ -449,7 +282,7 @@
         ]
       }
     },
-    "/custom/NewECSCoreWebService/DeleteCustomer": {
+    "/custom/SAPCustomers/DeleteCustomer": {
       "post": {
         "summary": "DeleteCustomer",
         "description": "DeleteCustomer",
@@ -466,48 +299,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "type": "object",
-              "properties": {
-                "result": {
-                  "type": "object",
-                  "properties": {
-                    "ReturnStructure": {
-                      "type": "object",
-                      "properties": {
-                        "ReturnType": {
-                          "type": "string"
-                        },
-                        "ReturnID": {
-                          "type": "string"
-                        },
-                        "ReturnNumber": {
-                          "type": "string"
-                        },
-                        "ReturnMessage": {
-                          "type": "string"
-                        },
-                        "ReturnText": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                },
-                "error": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "stackTrace": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
+              "$ref": "#/definitions/DeleteCustomer200"
             }
           }
         },
@@ -519,7 +311,7 @@
         ]
       }
     },
-    "/custom/NewECSCoreWebService/GetCustomerDetails": {
+    "/custom/SAPCustomers/GetCustomerDetails": {
       "post": {
         "summary": "GetCustomerDetails",
         "description": "GetCustomerDetails",
@@ -542,116 +334,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "type": "object",
-              "properties": {
-                "result": {
-                  "type": "object",
-                  "properties": {
-                    "AddressData": {
-                      "type": "object",
-                      "properties": {
-                        "CustomerNo": {
-                          "type": "string"
-                        },
-                        "Name": {
-                          "type": "string"
-                        },
-                        "Name2": {
-                          "type": "string"
-                        },
-                        "Name3": {
-                          "type": "string"
-                        },
-                        "Name4": {
-                          "type": "string"
-                        },
-                        "City": {
-                          "type": "string"
-                        },
-                        "District": {
-                          "type": "string"
-                        },
-                        "PO_Box": {
-                          "type": "string"
-                        },
-                        "PostalCode": {
-                          "type": "string"
-                        },
-                        "Region": {
-                          "type": "string"
-                        },
-                        "CountyCode": {
-                          "type": "string"
-                        },
-                        "CityCode": {
-                          "type": "string"
-                        },
-                        "Street": {
-                          "type": "string"
-                        },
-                        "Telephone": {
-                          "type": "string"
-                        },
-                        "Country": {
-                          "type": "string"
-                        },
-                        "LanguageKey": {
-                          "type": "string"
-                        },
-                        "Telebox": {
-                          "type": "string"
-                        },
-                        "Telephone2": {
-                          "type": "string"
-                        },
-                        "FormOfAddress": {
-                          "type": "string"
-                        },
-                        "Telex": {
-                          "type": "string"
-                        },
-                        "Transportzone": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "ReturnStructure": {
-                      "type": "object",
-                      "properties": {
-                        "ReturnType": {
-                          "type": "string"
-                        },
-                        "ReturnID": {
-                          "type": "string"
-                        },
-                        "ReturnNumber": {
-                          "type": "string"
-                        },
-                        "ReturnMessage": {
-                          "type": "string"
-                        },
-                        "ReturnText": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                },
-                "error": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "stackTrace": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
+              "$ref": "#/definitions/GetCustomerDetails200"
             }
           }
         },
@@ -661,6 +344,337 @@
             "Basic": []
           }
         ]
+      }
+    }
+  },
+  "definitions": {
+    "SAP_ReturnStructure": {
+      "type": "object",
+      "properties": {
+        "ReturnType": {
+          "type": "string"
+        },
+        "ReturnID": {
+          "type": "string"
+        },
+        "ReturnNumber": {
+          "type": "string"
+        },
+        "ReturnMessage": {
+          "type": "string"
+        },
+        "ReturnText": {
+          "type": "string"
+        }
+      }
+    },
+    "ListofSAP_ReturnStructure": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SAP_ReturnStructure"
+      }
+    },
+    "SAP_CustomerEntity": {
+      "type": "object",
+      "properties": {
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Salutation": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "POBox": {
+          "type": "string"
+        },
+        "Street": {
+          "type": "string"
+        },
+        "Postalcode": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "Telephone": {
+          "type": "string"
+        },
+        "Fax": {
+          "type": "string"
+        }
+      }
+    },
+    "ListofSAP_CustomerEntity": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SAP_CustomerEntity"
+      }
+    },
+    "SAP_CustomerAddress": {
+      "type": "object",
+      "properties": {
+        "CustomerNo": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Name2": {
+          "type": "string"
+        },
+        "Name3": {
+          "type": "string"
+        },
+        "Name4": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "District": {
+          "type": "string"
+        },
+        "PO_Box": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Region": {
+          "type": "string"
+        },
+        "CountyCode": {
+          "type": "string"
+        },
+        "CityCode": {
+          "type": "string"
+        },
+        "Street": {
+          "type": "string"
+        },
+        "Telephone": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "LanguageKey": {
+          "type": "string"
+        },
+        "Telebox": {
+          "type": "string"
+        },
+        "Telephone2": {
+          "type": "string"
+        },
+        "FormOfAddress": {
+          "type": "string"
+        },
+        "Telex": {
+          "type": "string"
+        },
+        "Transportzone": {
+          "type": "string"
+        }
+      }
+    },
+    "ListofSAP_CustomerAddress": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SAP_CustomerAddress"
+      }
+    },
+    "error": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "stackTrace": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "DoesCustomerExist200": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "result": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/DoesCustomerExistResult"
+          }
+        }
+      }
+    },
+    "DoesCustomerExistResult": {
+      "type": "object",
+      "properties": {
+        "ReturnStructure": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/SAP_ReturnStructure"
+          }
+        }
+      }
+    },
+    "CreateCustomer200": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "result": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/CreateCustomerResult"
+          }
+        }
+      }
+    },
+    "CreateCustomerResult": {
+      "type": "object",
+      "properties": {
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "ReturnStructure": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/SAP_ReturnStructure"
+          }
+        }
+      }
+    },
+    "ChangeCustomer200": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "result": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/ChangeCustomerResult"
+          }
+        }
+      }
+    },
+    "ChangeCustomerResult": {
+      "type": "object",
+      "properties": {
+        "ReturnStructure": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/SAP_ReturnStructure"
+          }
+        }
+      }
+    },
+    "GetCustomers200": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "result": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/GetCustomersResult"
+          }
+        }
+      }
+    },
+    "GetCustomersResult": {
+      "type": "object",
+      "properties": {
+        "Customers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SAP_CustomerEntity"
+          }
+        }
+      }
+    },
+    "DeleteCustomer200": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "result": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/DeleteCustomerResult"
+          }
+        }
+      }
+    },
+    "DeleteCustomerResult": {
+      "type": "object",
+      "properties": {
+        "ReturnStructure": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/SAP_ReturnStructure"
+          }
+        }
+      }
+    },
+    "GetCustomerDetails200": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/error"
+          }
+        },
+        "result": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/GetCustomerDetailsResult"
+          }
+        }
+      }
+    },
+    "GetCustomerDetailsResult": {
+      "type": "object",
+      "properties": {
+        "AddressData": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/SAP_CustomerAddress"
+          }
+        },
+        "ReturnStructure": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/SAP_ReturnStructure"
+          }
+        }
       }
     }
   },
