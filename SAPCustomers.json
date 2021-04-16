@@ -1,1 +1,673 @@
-{"swagger":"2.0","info":{"title":"SAPCustomers","description":"DEFAULT","version":"0.0.0"},"host":"k2nasap.servicebus.windows.net","basePath":"/ecs/ws","schemes":["https"],"paths":{"/custom/SAPCustomers/ChangeCustomer":{"post":{"tags":["Custom"],"summary":"ChangeCustomer","description":"ChangeCustomer","operationId":"changeCustomer","produces":["application/json"],"parameters":[{"name":"CustomerName","in":"query","description":"CustomerName","required":false,"type":"string","x-example":""},{"name":"CustomerCity","in":"query","description":"CustomerCity","required":false,"type":"string","x-example":""},{"name":"CustomerCountryKey","in":"query","description":"CustomerCountryKey","required":false,"type":"string","x-example":""},{"name":"CustomerPostalCode","in":"query","description":"CustomerPostalCode","required":false,"type":"string","x-example":""},{"name":"DistributionChannel","in":"query","description":"DistributionChannel","required":false,"type":"string","x-example":""},{"name":"Division","in":"query","description":"Division","required":false,"type":"string","x-example":""},{"name":"LanguageKey","in":"query","description":"LanguageKey","required":false,"type":"string","x-example":""},{"name":"Currency","in":"query","description":"Currency","required":false,"type":"string","x-example":""},{"name":"CustomerStreet","in":"query","description":"CustomerStreet","required":false,"type":"string","x-example":""},{"name":"CustomerNumber","in":"query","description":"CustomerNumber","required":false,"type":"string","x-example":""},{"name":"SalesOrganisation","in":"query","description":"SalesOrganisation","required":false,"type":"string","x-example":""}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/DoesCustomerExistResponse"}}},"security":[]}},"/custom/SAPCustomers/CreateCustomer":{"post":{"tags":["Custom"],"summary":"CreateCustomer","description":"CreateCustomer","operationId":"createCustomer","produces":["application/json"],"parameters":[{"name":"CustomerName","in":"query","description":"CustomerName","required":false,"type":"string","x-example":""},{"name":"CustomerCity","in":"query","description":"CustomerCity","required":false,"type":"string","x-example":""},{"name":"CustomerCountryKey","in":"query","description":"CustomerCountryKey","required":false,"type":"string","x-example":""},{"name":"CustomerPostalCode","in":"query","description":"CustomerPostalCode","required":false,"type":"string","x-example":""},{"name":"DistributionChannel","in":"query","description":"DistributionChannel","required":false,"type":"string","x-example":""},{"name":"Division","in":"query","description":"Division","required":false,"type":"string","x-example":""},{"name":"ReferenceCustomer","in":"query","description":"ReferenceCustomer","required":false,"type":"string","x-example":""},{"name":"LanguageKey","in":"query","description":"LanguageKey","required":false,"type":"string","x-example":""},{"name":"Currency","in":"query","description":"Currency","required":false,"type":"string","x-example":""},{"name":"CustomerStreet","in":"query","description":"CustomerStreet","required":false,"type":"string","x-example":""},{"name":"External_ID","in":"query","description":"External_ID","required":false,"type":"string","x-example":""},{"name":"SalesOrganisation","in":"query","description":"SalesOrganisation","required":false,"type":"string","x-example":""}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/CreateCustomerResponse"}}},"security":[]}},"/custom/SAPCustomers/DeleteCustomer":{"post":{"tags":["Custom"],"summary":"DeleteCustomer","description":"DeleteCustomer","operationId":"deleteCustomer","produces":["application/json"],"parameters":[{"name":"CustomerNumber","in":"query","description":"CustomerNumber","required":false,"type":"string","x-example":""}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/DeleteCustomerResponse"}}},"security":[]}},"/custom/SAPCustomers/DoesCustomerExist":{"post":{"tags":["Custom"],"summary":"DoesCustomerExist","description":"DoesCustomerExist","operationId":"doesCustomerExist","produces":["application/json"],"parameters":[{"name":"Division","in":"query","description":"Division","required":false,"type":"string","x-example":""},{"name":"CustomerNumber","in":"query","description":"CustomerNumber","required":false,"type":"string","x-example":""},{"name":"CompanyCode","in":"query","description":"CompanyCode","required":false,"type":"string","x-example":""},{"name":"SalesOrganisation","in":"query","description":"SalesOrganisation","required":false,"type":"string","x-example":""},{"name":"DistributionChannel","in":"query","description":"DistributionChannel","required":false,"type":"string","x-example":""}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/DoesCustomerExistResponse"}}},"security":[]}},"/custom/SAPCustomers/GetCustomerDetails":{"post":{"tags":["Custom"],"summary":"GetCustomerDetails","description":"GetCustomerDetails","operationId":"getCustomerDetails","produces":["application/json"],"parameters":[{"name":"CustomerNo","in":"query","description":"CustomerNo","required":false,"type":"string","x-example":""},{"name":"CompanyCode","in":"query","description":"CompanyCode","required":false,"type":"string","x-example":""}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GetCustomerDetailsResponse"}}},"security":[]}},"/custom/SAPCustomers/GetCustomers":{"post":{"tags":["Custom"],"summary":"GetCustomers","description":"GetCustomers","operationId":"getCustomers","produces":["application/json"],"parameters":[{"name":"CustomerNamePattern","in":"query","description":"CustomerNamePattern","required":false,"type":"string","x-example":""}],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/GetCustomersResponse"}}},"security":[]}}},"definitions":{"GetCustomerDetailsResponse":{"description":"Model for GetCustomerDetailsResponse","required":["error"],"properties":{"error":{"$ref":"#/definitions/Error"},"result":{"$ref":"#/definitions/Result6"}}},"Result6":{"description":"Model for Result6","required":["AddressData"],"properties":{"AddressData":{"$ref":"#/definitions/AddressData"},"ReturnStructure":{"$ref":"#/definitions/Result"}}},"AddressData":{"description":"Model for AddressData","required":["City"],"properties":{"City":{"type":"string"},"CityCode":{"type":"string"},"Country":{"type":"string"},"CountyCode":{"type":"string"},"CustomerNo":{"type":"string"},"District":{"type":"string"},"FormOfAddress":{"type":"string"},"LanguageKey":{"type":"string"},"Name":{"type":"string"},"Name2":{"type":"string"},"Name3":{"type":"string"},"Name4":{"type":"string"},"PO_Box":{"type":"string"},"PostalCode":{"type":"string"},"Region":{"type":"string"},"Street":{"type":"string"},"Telebox":{"type":"string"},"Telephone":{"type":"string"},"Telephone2":{"type":"string"},"Telex":{"type":"string"},"Transportzone":{"type":"string"}}},"DeleteCustomerResponse":{"description":"Model for DeleteCustomerResponse","required":["error"],"properties":{"error":{"$ref":"#/definitions/Error"},"result":{"$ref":"#/definitions/Result5"}}},"Result5":{"description":"Model for Result5","required":["ReturnStructure"],"properties":{"ReturnStructure":{"$ref":"#/definitions/Result"}}},"GetCustomersResponse":{"description":"Model for GetCustomersResponse","required":["error"],"properties":{"error":{"$ref":"#/definitions/Error"},"result":{"type":"array","items":{"$ref":"#/definitions/Result4"}}}},"Result4":{"description":"Model for Result4","required":["City"],"properties":{"City":{"type":"string"},"CustomerNumber":{"type":"string"},"Fax":{"type":"string"},"Name":{"type":"string"},"POBox":{"type":"string"},"Postalcode":{"type":"string"},"Salutation":{"type":"string"},"Street":{"type":"string"},"Telephone":{"type":"string"}}},"CreateCustomerResponse":{"description":"Model for CreateCustomerResponse","required":["error"],"properties":{"error":{"$ref":"#/definitions/Error"},"result":{"$ref":"#/definitions/Result2"}}},"Result2":{"description":"Model for Result2","required":["CustomerNumber"],"properties":{"CustomerNumber":{"type":"string"},"ReturnStructure":{"$ref":"#/definitions/Result"}}},"DoesCustomerExistResponse":{"description":"Model for DoesCustomerExistResponse","required":["error"],"properties":{"error":{"$ref":"#/definitions/Error"},"result":{"$ref":"#/definitions/Result"}}},"Error":{"description":"Model for Error","required":["message"],"properties":{"message":{"type":"string"},"stackTrace":{"type":"string"},"type":{"type":"string"}}},"Result":{"description":"Model for Result","required":["ReturnID"],"properties":{"ReturnID":{"type":"string"},"ReturnMessage":{"type":"string"},"ReturnNumber":{"type":"string"},"ReturnText":{"type":"string"},"ReturnType":{"type":"string"}}}},"securityDefinitions":{"Default":{"description":"Default authentication scheme for the API","type":"apiKey","name":"Authorization","in":"header"}},"security":[],"tags":[{"name":"Custom","description":"Operations about Custom"}]}
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "SAPCustomers"
+  },
+"host":"k2nasap.servicebus.windows.net","basePath":"/ecs/ws","schemes":["https"],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/custom/SAPCustomers/DoesCustomerExist": {
+      "post": {
+        "summary": "DoesCustomerExist",
+        "description": "DoesCustomerExist",
+        "operationId": "DoesCustomerExist",
+        "parameters": [
+          {
+            "description": "Division",
+            "in": "query",
+            "name": "Division",
+            "type": "string"
+          },
+          {
+            "description": "CustomerNumber",
+            "in": "query",
+            "name": "CustomerNumber",
+            "type": "string"
+          },
+          {
+            "description": "CompanyCode",
+            "in": "query",
+            "name": "CompanyCode",
+            "type": "string"
+          },
+          {
+            "description": "SalesOrganisation",
+            "in": "query",
+            "name": "SalesOrganisation",
+            "type": "string"
+          },
+          {
+            "description": "DistributionChannel",
+            "in": "query",
+            "name": "DistributionChannel",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "ReturnType": {
+                      "type": "string"
+                    },
+                    "ReturnID": {
+                      "type": "string"
+                    },
+                    "ReturnNumber": {
+                      "type": "string"
+                    },
+                    "ReturnMessage": {
+                      "type": "string"
+                    },
+                    "ReturnText": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/custom/SAPCustomers/CreateCustomer": {
+      "post": {
+        "summary": "CreateCustomer",
+        "description": "CreateCustomer",
+        "operationId": "CreateCustomer",
+        "parameters": [
+          {
+            "description": "CustomerName",
+            "in": "query",
+            "name": "CustomerName",
+            "type": "string"
+          },
+          {
+            "description": "CustomerCity",
+            "in": "query",
+            "name": "CustomerCity",
+            "type": "string"
+          },
+          {
+            "description": "CustomerCountryKey",
+            "in": "query",
+            "name": "CustomerCountryKey",
+            "type": "string"
+          },
+          {
+            "description": "CustomerPostalCode",
+            "in": "query",
+            "name": "CustomerPostalCode",
+            "type": "string"
+          },
+          {
+            "description": "DistributionChannel",
+            "in": "query",
+            "name": "DistributionChannel",
+            "type": "string"
+          },
+          {
+            "description": "Division",
+            "in": "query",
+            "name": "Division",
+            "type": "string"
+          },
+          {
+            "description": "ReferenceCustomer",
+            "in": "query",
+            "name": "ReferenceCustomer",
+            "type": "string"
+          },
+          {
+            "description": "LanguageKey",
+            "in": "query",
+            "name": "LanguageKey",
+            "type": "string"
+          },
+          {
+            "description": "Currency",
+            "in": "query",
+            "name": "Currency",
+            "type": "string"
+          },
+          {
+            "description": "CustomerStreet",
+            "in": "query",
+            "name": "CustomerStreet",
+            "type": "string"
+          },
+          {
+            "description": "External_ID",
+            "in": "query",
+            "name": "External_ID",
+            "type": "string"
+          },
+          {
+            "description": "SalesOrganisation",
+            "in": "query",
+            "name": "SalesOrganisation",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "CustomerNumber": {
+                      "type": "string"
+                    },
+                    "ReturnStructure": {
+                      "type": "object",
+                      "properties": {
+                        "ReturnType": {
+                          "type": "string"
+                        },
+                        "ReturnID": {
+                          "type": "string"
+                        },
+                        "ReturnNumber": {
+                          "type": "string"
+                        },
+                        "ReturnMessage": {
+                          "type": "string"
+                        },
+                        "ReturnText": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/custom/SAPCustomers/ChangeCustomer": {
+      "post": {
+        "summary": "ChangeCustomer",
+        "description": "ChangeCustomer",
+        "operationId": "ChangeCustomer",
+        "parameters": [
+          {
+            "description": "CustomerName",
+            "in": "query",
+            "name": "CustomerName",
+            "type": "string"
+          },
+          {
+            "description": "CustomerCity",
+            "in": "query",
+            "name": "CustomerCity",
+            "type": "string"
+          },
+          {
+            "description": "CustomerCountryKey",
+            "in": "query",
+            "name": "CustomerCountryKey",
+            "type": "string"
+          },
+          {
+            "description": "CustomerPostalCode",
+            "in": "query",
+            "name": "CustomerPostalCode",
+            "type": "string"
+          },
+          {
+            "description": "DistributionChannel",
+            "in": "query",
+            "name": "DistributionChannel",
+            "type": "string"
+          },
+          {
+            "description": "Division",
+            "in": "query",
+            "name": "Division",
+            "type": "string"
+          },
+          {
+            "description": "LanguageKey",
+            "in": "query",
+            "name": "LanguageKey",
+            "type": "string"
+          },
+          {
+            "description": "Currency",
+            "in": "query",
+            "name": "Currency",
+            "type": "string"
+          },
+          {
+            "description": "CustomerStreet",
+            "in": "query",
+            "name": "CustomerStreet",
+            "type": "string"
+          },
+          {
+            "description": "CustomerNumber",
+            "in": "query",
+            "name": "CustomerNumber",
+            "type": "string"
+          },
+          {
+            "description": "SalesOrganisation",
+            "in": "query",
+            "name": "SalesOrganisation",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "ReturnType": {
+                      "type": "string"
+                    },
+                    "ReturnID": {
+                      "type": "string"
+                    },
+                    "ReturnNumber": {
+                      "type": "string"
+                    },
+                    "ReturnMessage": {
+                      "type": "string"
+                    },
+                    "ReturnText": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/custom/SAPCustomers/GetCustomers": {
+      "post": {
+        "summary": "GetCustomers",
+        "description": "GetCustomers",
+        "operationId": "GetCustomers",
+        "parameters": [
+          {
+            "description": "CustomerNamePattern",
+            "in": "query",
+            "name": "CustomerNamePattern",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "CustomerNumber": {
+                        "type": "string"
+                      },
+                      "Salutation": {
+                        "type": "string"
+                      },
+                      "Name": {
+                        "type": "string"
+                      },
+                      "POBox": {
+                        "type": "string"
+                      },
+                      "Street": {
+                        "type": "string"
+                      },
+                      "Postalcode": {
+                        "type": "string"
+                      },
+                      "City": {
+                        "type": "string"
+                      },
+                      "Telephone": {
+                        "type": "string"
+                      },
+                      "Fax": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/custom/SAPCustomers/DeleteCustomer": {
+      "post": {
+        "summary": "DeleteCustomer",
+        "description": "DeleteCustomer",
+        "operationId": "DeleteCustomer",
+        "parameters": [
+          {
+            "description": "CustomerNumber",
+            "in": "query",
+            "name": "CustomerNumber",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "ReturnStructure": {
+                      "type": "object",
+                      "properties": {
+                        "ReturnType": {
+                          "type": "string"
+                        },
+                        "ReturnID": {
+                          "type": "string"
+                        },
+                        "ReturnNumber": {
+                          "type": "string"
+                        },
+                        "ReturnMessage": {
+                          "type": "string"
+                        },
+                        "ReturnText": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/custom/SAPCustomers/GetCustomerDetails": {
+      "post": {
+        "summary": "GetCustomerDetails",
+        "description": "GetCustomerDetails",
+        "operationId": "GetCustomerDetails",
+        "parameters": [
+          {
+            "description": "CustomerNo",
+            "in": "query",
+            "name": "CustomerNo",
+            "type": "string"
+          },
+          {
+            "description": "CompanyCode",
+            "in": "query",
+            "name": "CompanyCode",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "object",
+                  "properties": {
+                    "AddressData": {
+                      "type": "object",
+                      "properties": {
+                        "CustomerNo": {
+                          "type": "string"
+                        },
+                        "Name": {
+                          "type": "string"
+                        },
+                        "Name2": {
+                          "type": "string"
+                        },
+                        "Name3": {
+                          "type": "string"
+                        },
+                        "Name4": {
+                          "type": "string"
+                        },
+                        "City": {
+                          "type": "string"
+                        },
+                        "District": {
+                          "type": "string"
+                        },
+                        "PO_Box": {
+                          "type": "string"
+                        },
+                        "PostalCode": {
+                          "type": "string"
+                        },
+                        "Region": {
+                          "type": "string"
+                        },
+                        "CountyCode": {
+                          "type": "string"
+                        },
+                        "CityCode": {
+                          "type": "string"
+                        },
+                        "Street": {
+                          "type": "string"
+                        },
+                        "Telephone": {
+                          "type": "string"
+                        },
+                        "Country": {
+                          "type": "string"
+                        },
+                        "LanguageKey": {
+                          "type": "string"
+                        },
+                        "Telebox": {
+                          "type": "string"
+                        },
+                        "Telephone2": {
+                          "type": "string"
+                        },
+                        "FormOfAddress": {
+                          "type": "string"
+                        },
+                        "Telex": {
+                          "type": "string"
+                        },
+                        "Transportzone": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "ReturnStructure": {
+                      "type": "object",
+                      "properties": {
+                        "ReturnType": {
+                          "type": "string"
+                        },
+                        "ReturnID": {
+                          "type": "string"
+                        },
+                        "ReturnNumber": {
+                          "type": "string"
+                        },
+                        "ReturnMessage": {
+                          "type": "string"
+                        },
+                        "ReturnText": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stackTrace": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": [],
+            "Basic": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    },
+    "Basic": {
+      "type": "basic"
+    }
+  }
+}
