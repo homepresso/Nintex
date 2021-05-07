@@ -1,5 +1,259 @@
-body.theme-entry, #pgOuterPanel.theme-entry {
+/*Main Form Styling*/
 
-color: #D0D0D0
-  /*test*/
+/*
+Colors: #9F1D1F (red), #D2AB48 gold, #f4efe7 tan #4E3F21 brown/green
+
+*/
+
+.theme-entry, .theme-entry div, .theme-entry span, .theme-entry td, .theme-entry li, .theme-entry p, .theme-entry textarea, .theme-entry input[type='text'], .theme-entry input.text, .theme-entry select, .theme-entry option {
+	font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+	font-size: 12pt;
 }
+
+body {
+	margin: 0 auto;
+}
+
+.runtime-content {
+	margin: 0px !important;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+} /*View parent settings for centering child views*/
+
+.row > .view {
+	align-content: center;
+	align-items: center;
+	margin: auto;
+} /*View settings for centering views*/
+
+.theme-entry h2.page-subtitle {
+	font-family: 'Crimson Text', serif;
+	font-weight: 600;
+	font-size: 30px;
+}
+
+.theme-entry h3[name^='h3_'] {
+	font-family: 'Ubuntu', Helvetica, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	font-size: 18px;
+	background-color: #9F1D1F;
+	color: #fff;
+	border-radius:30px;
+	border: 1px;
+	border-color: #9F1D1F;
+	padding: 10px 15px;
+	margin-bottom: 20px;
+}
+
+.theme-entry h4 {
+	font-family: 'Ubuntu', Helvetica, sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 16px;
+	margin-left: 40px;
+	margin-top: 10px;
+	color: #4E3F21;
+}
+
+.theme-entry h4[name^=h4_] {
+	margin-left: 10px;
+}
+body.theme-entry {
+align-items: center;	
+}
+
+.theme-entry .view .innerpanel > .grid, .theme-entry .view .innerpanel > .panel, .theme-entry .view-canvas > .grid, .theme-entry .view-canvas > .panel {
+    box-shadow: none; /*No dropshadows*/
+	position:relative;
+	margin:auto !important;
+}
+.theme-entry .dialog {
+  box-shadow: none;
+  position: absolute;
+  background-color: #ffffff !important;
+  /*above any other z-indexes, like the paging control*/
+}
+
+[name^='transparent_']>.panel-body {
+        background-color: transparent !important;
+    }
+	
+	/*Removes box shadow from views , other to add: .theme-entry .view-canvas>.grid, .theme-entry .view-canvas>.panel*/
+.theme-entry .view .innerpanel>.panel[name^='border_'],
+.theme-entry .view .innerpanel>.grid[name^='border_']{
+box-shadow: none;
+border: 2px #D2AB48 solid;
+border-radius: 5px;
+box-sizing: border-box !important;
+padding: 20px;
+background-color: #fff;
+margin-top: 30px !important;
+margin-bottom: 20px;
+}
+
+.theme-entry .view [name^='border_']{
+	margin: 20px;
+}
+
+.theme-entry.runtime-form {
+    min-width: 300px;
+	justify-content: center !important;
+}
+
+
+/*End Main form styling*/
+
+/*Control Styling*/
+.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox.watermark, .theme-entry .input-control-watermark {
+    font-size: 11pt !important;
+}
+.theme-entry .input-control.watermark a.input-control, .theme-entry .input-control.watermark a.input-control span {
+    font-size: 11pt !important;
+}
+
+/*End Control Styling*/
+
+/*Base Tab Text*/
+a.tab .tab-text{
+	font-size: 14px !important;
+	color: #fff !important;
+}
+
+/*Active Tab Text*/
+a.tab.selected .tab-text {
+	font-size: 14px !important;
+	font-weight: bold !important;
+	color: #D2AB48 !important;
+	border-bottom: 2px;
+	border-color: #D2AB48;
+}
+
+/*Tab background on hover*/
+a.tab:hover{
+    color: #D2AB48 !important;
+font-weight: bold;	
+}
+/*Selected tab text hover color*/
+/*#region tabs */
+    /*Note that we only want to affect form tabs, not tabs that are in system dialogs */
+
+    .theme-entry.runtime-form>.tab-box {
+        text-align: center;
+    }
+
+    .theme-entry.runtime-form>.tab-box .tab-box-body-m {
+        margin: 0px;
+        /*overrride some negative margin in SF*/
+    }
+
+    .theme-entry.runtime-form>.tab-box ul.tab-box-tabs {
+        display: inline-block;
+        background-color: #515151;
+		width: 100%;
+        padding: 10px;
+		top:-10px;
+    }
+
+    .theme-entry.runtime-form>.tab-box ul.tab-box-tabs li a.tab {
+        border-bottom: 3px;
+		border-bottom-color: #D2AB48;
+        overflow: hidden;
+        text-transform: UPPERCASE;
+    }
+
+    .theme-entry.runtime-form>.tab-box .tab-box-body {
+        text-align: left;
+    }
+
+    .theme-entry.runtime-form>.tab-box ul.tab-box-tabs a.tab .tab-text {
+        color: rgb(242, 240, 235);
+    }
+
+    /* tab color selected background*/
+	
+	.theme-entry.runtime-form>.tab-box ul.tab-box-tabs a.tab.selected .tab-text {
+        /*color: rgb(0, 0, 0);*/
+		border-bottom: 2px;
+		border-color: #D2AB48;
+    }
+
+    html .theme-entry .tab-box ul.tab-box-tabs a.selected.tab .tab-wrapper,
+    html .theme-entry .tab-box ul.tab-box-tabs a.tab.selected:hover .tab-wrapper {
+        border-bottom: 0px;
+        margin: 0px;
+		background-color: #515151;
+    }
+	.theme-entry.runtime-form>.tab-box ul.tab-box-tabs a.tab.selected {
+        /*color: rgb(0, 0, 0);*/
+		background-color: 515151;
+    }
+
+    .theme-entry .tab-box ul.tab-box-tabs li {
+        height: auto;
+    }
+	
+	.theme-entry .tab-box {
+		overflow-x: hidden;
+		top: -10px;
+	}
+
+    /*#endregion tabs */
+	
+	div.header {
+    z-index: 999;
+    box-sizing: border-box;
+    margin-bottom: 0px!important;
+    box-shadow: 1px 1px 0px rgba(32, 33, 36, 0.28);
+}
+
+/* buttons */
+
+.theme-entry a.SourceCode-Forms-Controls-Web-Button,
+.SFC .SourceCode-Forms-Controls-Web-Button {
+    background: #515151;
+    border-color: #f4efe7;
+    border-radius: 20px;
+    color: #fff;
+    min-width: 100px;
+	border-width: 3px;
+	font-family: 'Ubuntu', Helvetica, sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 18px;
+    margin: 15px 10px;
+    transition-delay: 0s;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease;
+    animation: none;
+}
+
+.theme-entry a.SourceCode-Forms-Controls-Web-Button:focus,
+.theme-entry a.SourceCode-Forms-Controls-Web-Button:active,
+.SFC a.SourceCode-Forms-Controls-Web-Button:focus,
+.SFC a.SourceCode-Forms-Controls-Web-Button:active {
+    background-color: #252524;
+    border-color: #252524;
+}
+
+.theme-entry a.SourceCode-Forms-Controls-Web-Button:hover,
+.SFC a.SourceCode-Forms-Controls-Web-Button:hover {
+    background-color: #9F1D1F;
+    border-color: #9F1D1F;
+	font-weight: 700;
+}
+/*End of buttons*/
+
+/* Popup Dialog */
+.theme-entry .dialog .popup-footer {
+    height: 6.5rem;
+    line-height: 5.2rem;
+}
+
+
+
+/*Form Controls*/
