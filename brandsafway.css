@@ -256,9 +256,19 @@ font-weight: bold;
 
 .theme-entry a.SourceCode-Forms-Controls-Web-Button, .theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled, .theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled:hover, .theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled:focus, .theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled:active, .theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled:hover:focus, .theme-entry a.SourceCode-Forms-Controls-Web-Button.disabled:hover:active, .theme-entry a.SourceCode-Forms-Controls-Web-Button.designtime, .theme-entry a.SourceCode-Forms-Controls-Web-Button.designtime:hover, .theme-entry a.SourceCode-Forms-Controls-Web-Button.designtime:focus, .theme-entry a.SourceCode-Forms-Controls-Web-Button.designtime:active, .theme-entry a.SourceCode-Forms-Controls-Web-Button.designtime:hover:focus, .theme-entry a.SourceCode-Forms-Controls-Web-Button.designtime:hover:active, .theme-entry a.SourceCode-Forms-Controls-Web-Button.preview, .theme-entry a.SourceCode-Forms-Controls-Web-Button.preview:hover, .theme-entry a.SourceCode-Forms-Controls-Web-Button.preview:focus, .theme-entry a.SourceCode-Forms-Controls-Web-Button.preview:active, .theme-entry a.SourceCode-Forms-Controls-Web-Button.preview:hover:focus, .theme-entry a.SourceCode-Forms-Controls-Web-Button.preview:hover:active
 {
-background: rebeccapurple;	
+background: #EDA730;	
 }
 
+.theme-entry .panel-header-wrapper .panel-header-text
+{
 
+    background: #852B2E;
+}
+
+.theme-entry .grid-header-wrapper .grid-header-text, .theme-entry .panel-header-wrapper .panel-header-text, .theme-entry .grid-header-wrapper .grid-header-text>span, .theme-entry .panel-header-wrapper .panel-header-text>span
+
+{
+    color: white;
+}
 
 /*Form Controls*/
