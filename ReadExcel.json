@@ -39,7 +39,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object"
+                "$ref": "#/definitions/ReadExcel"
               }
             }
           }
@@ -73,9 +73,10 @@
   "securityDefinitions": {},
   "security": [],
   "tags": [
-    {
+   {
       "name": "Web",
       "description": "Operations about Web"
     }
   ]
 }
+
