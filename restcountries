@@ -1,0 +1,271 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Countries",
+    "version": "1.0.0",
+    "title": "Countries",
+    "contact": {
+      "email": "vadim.tabakman@nintex.com"
+    }
+  },
+  "host": "restcountries.eu",
+  "basePath": "/rest/v2",
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/all": {
+      "get": {
+        "summary": "Get information about countries",
+        "description": "All Countries",
+        "operationId": "countries_all",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "x-ntx-summary": "Result"
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/name/{name}": {
+      "get": {
+        "summary": "Get Country by Name",
+        "description": "Search by country name. It can be the native name or partial name",
+        "operationId": "country_name",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "x-ntx-summary": "Country Name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "fullText",
+            "x-ntx-summary": "Full Text",
+            "type": "boolean",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "x-ntx-summary": "Result"
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/alpha/{code}": {
+      "get": {
+        "summary": "Get Country by Code",
+        "description": "Search by ISO 3166-1 2-letter or 3-letter country code",
+        "operationId": "country_by_code",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "x-ntx-summary": "Country Code",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "x-ntx-summary": "Result"
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/currency/{currency}": {
+      "get": {
+        "summary": "Get Country by Currency Code",
+        "description": "Search by ISO 4217 currency code",
+        "operationId": "country_by_currency_code",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "currency",
+            "x-ntx-summary": "Currency Code",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "x-ntx-summary": "Result"
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/lang/{lang}": {
+      "get": {
+        "summary": "Get Country by Language",
+        "description": "Search by ISO 639-1 language code.",
+        "operationId": "country_by_language_code",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "lang",
+            "x-ntx-summary": "Language",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "x-ntx-summary": "Result"
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/capital/{capital}": {
+      "get": {
+        "summary": "Get Country by Capital",
+        "description": "Search by capital city",
+        "operationId": "country_by_capital",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "capital",
+            "x-ntx-summary": "Capital City",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "x-ntx-summary": "Result"
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/callingcode/{callingcode}": {
+      "get": {
+        "summary": "Get Country by Calling Code",
+        "description": "Search by calling code",
+        "operationId": "country_by_calling_code",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "callingcode",
+            "x-ntx-summary": "Calling Code",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "x-ntx-summary": "Result"
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/region/{region}": {
+      "get": {
+        "summary": "Get Country by Region",
+        "description": "Search by cregion",
+        "operationId": "country_by_region",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "region",
+            "x-ntx-summary": "Region",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "x-ntx-summary": "Result"
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
